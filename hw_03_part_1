@@ -1,0 +1,14 @@
+from datetime import datetime
+
+#Description: function culculates difference between specified date and current date
+
+def get_days_from_today(date): # ensure the input is a string in format "%Y-%m-%d"
+    date = datetime.strptime(date, "%Y-%m-%d").date() #converting from string to datatime object
+    current_date = datetime.today()
+    dates_difference = current_date.toordinal() - date.toordinal()
+    print(dates_difference)
+    return dates_difference #returns quantity of days, class 'int'
+
+#test the function
+get_days_from_today("2025-05-25")
+get_days_from_today("2024-05-25")
